@@ -58,8 +58,8 @@ ISR(INT0_vect)
 {
 		uart_puts("Int0 \r\n");
 		led_green_on;
-		//uint8_t status = nrf24l01_getstatus();
-		//nrf24l01_writeregister(NRF24L01_REG_STATUS, (1<<NRF24L01_REG_RX_DR) | (1<<NRF24L01_REG_TX_DS) | (1<<NRF24L01_REG_MAX_RT)); //reset status
+		uint8_t status = nrf24l01_getstatus();
+		nrf24l01_writeregister(NRF24L01_REG_STATUS, (1<<NRF24L01_REG_RX_DR) | (1<<NRF24L01_REG_TX_DS) | (1<<NRF24L01_REG_MAX_RT)); //reset status
 		/*
 
 			if (status & (1<<NRF24L01_REG_MASK_TX_DS))							// IRQ: Package has been sent
